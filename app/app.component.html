@@ -1,0 +1,68 @@
+<h1>My First Angular 2 App</h1>
+<!-- PrimeNG table -->
+<p-dataTable [value]="myCollection" selectionMode="single" [(selection)]="myCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="10" [responsive]="true">
+    <header>CRUD for Cars</header>
+    <p-column field="vin" header="Vin" [sortable]="true"></p-column>
+    <p-column field="year" header="Year" [sortable]="true"></p-column>
+    <p-column field="brand" header="Brand" [sortable]="true"></p-column>
+    <p-column field="color" header="Color" [sortable]="true"></p-column>
+</p-dataTable>
+<input [(ngModel)]="myCar.brand"/>
+<p>{{myCar.brand}}</p>
+
+<h2>HTML slider</h2>
+<div class="col-sm-3">
+    <input [(ngModel)] = "val1" id="slider1" color="#ff0000" type="range" min="10" max="100" step="10" /> 
+</div>
+
+<p>{{val1}}</p>
+
+<button (click)="buttonClicked($event)">calculate</button>
+
+<!-- Primeng Sliders -->
+<div class="ContentSideSections Implementation">
+  <h2> Primeng SLiders</h2>
+    <h3 class="first">Basic: {{val1}}</h3>
+    <p-slider [(ngModel)]="val1" [style]="{'width':'200px', 'color': '#DC143C'}"></p-slider>
+
+    <h3>Input: {{val2}}</h3>
+    <input type="text" pInputText [(ngModel)]="val2" style="width:190px" readonly/>
+    <p-slider [(ngModel)]="val2" [style]="{'width':'100px', 'color': '#DC143C'}"></p-slider>
+
+    <h3>Animate: {{val3}}</h3>
+    <p-slider [(ngModel)]="val3" [style]="{'width':'200px', 'color': '#DC143C'}" [animate]="true"></p-slider>
+
+    <h3>Step: {{val4}}</h3>
+    <p-slider [(ngModel)]="val4" [style]="{'width':'200px'}" [step]="20"></p-slider>
+
+    <h3>Range: {{rangeValues}}</h3>
+    <p-slider [(ngModel)]="rangeValues" [style]="{'width':'200px'}" [range]="true"></p-slider>
+
+    <h3>Vertical: {{val5}}</h3>
+    <p-slider [(ngModel)]="val5" [style]="{'height':'200px'}" orientation="vertical"></p-slider>
+</div>
+
+<p> testing for each loop in component </p>
+<h2>{{sampleForEachLoop()}}</h2>
+<!-- HTML table -->
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+
+<table style="width:100%">
+  <tr>
+    <th>Vin</th>
+    <th>Year</th>
+    <th>Brand</th>
+    <th>Color</th>
+  </tr>
+  <tr *ngFor = "let ourCar of myCollection">
+    <td>{{ourCar.vin}}</td>
+    <td>{{ourCar.year}}</td>
+    <td>{{ourCar.brand}}</td>
+    <td>{{ourCar.color}}</td>
+  </tr>
+</table> 
