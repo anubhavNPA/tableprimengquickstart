@@ -1,0 +1,19 @@
+<h4>table setup AGENTS</h4>
+<!--p-paginator rows="3" totalRecords="9" (onPageChange)="paginate($event)"></p-paginator-->
+<p-dataTable 
+    [value]="agentList" 
+    selectionMode="single" 
+    [(selection)]="selectedAgent" 
+    (onRowSelect)="onRowSelect($event)" 
+    [paginator]="true" 
+    [rows]="3" 
+    [pageLinks]="3" 
+    [rowsPerPageOptions]="[3,1]"
+    [responsive]="true">
+    <header>Agents Allocation</header>
+    <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
+    <!--p-column field="id" header="ID" [sortable]="true"></p-column>
+    <p-column field="fullName" header="Name" [sortable]="true"></p-column-->
+</p-dataTable>
+<hr>
+<!--<defaulters></defaulters>-->

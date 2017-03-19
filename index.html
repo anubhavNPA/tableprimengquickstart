@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <base href="/">
     <title>Angular 2 QuickStart</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
 
-     <link rel="stylesheet" type="text/css" href="node_modules/primeng/resources/themes/omega/theme.css" />
-    <link rel="stylesheet" type="text/css" href="app/resources/icons/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="node_modules/primeng/resources/themes/omega/theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!--link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" /-->
     <link rel="stylesheet" type="text/css" href="node_modules/primeng/resources/primeng.min.css" />
 
 
@@ -19,9 +21,9 @@
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-    <!-- Optional if a jquery dependant widget is used -->
+    <!-- Optional if a jquery dependant widget is used
     <script src="node_modules/primeui/primeui-ng-all.min.js"></script>
-    
+     -->
     <script src="systemjs.config.js"></script>
     <script>
       System.import('app').catch(function(err){ console.error(err); });
@@ -31,4 +33,6 @@
   <body>
     <my-app>Loading...</my-app>
   </body>
+  <script src="/js/primeui-all.min.js" ></script>
+  <script src="/js/primeui-ng-all.min.js" ></script>
 </html>
